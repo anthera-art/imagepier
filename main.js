@@ -26,6 +26,13 @@ async function Screenshot(url) {
     console.log("launching browser");
     const browser = await puppeteer.launch({
         headless: true,
+        args: [
+            '--disable-gpu',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-extensions',
+            '--force-device-scale-factor=1'
+        ]
     });
 
     const page = await browser.newPage();
