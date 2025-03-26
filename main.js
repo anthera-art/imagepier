@@ -25,7 +25,6 @@ const connection = mysql.createPool({
 async function Screenshot(url) {
     console.log("launching browser");
     const browser = await puppeteer.launch({
-        browser: "firefox",
         headless: true,
     });
 
