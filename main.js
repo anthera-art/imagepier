@@ -50,7 +50,7 @@ app.post('/embed/me', async (req, res) => {
         return res.status(400).json({error: 'Missing URL parameter'});
     }
 
-    var [data, r] = await connection.query("SELECT * FROM AntheraMe WHERE `ID` = ?", [req.body.data.ID]);
+    var [data, r] = await connection.query("SELECT * FROM ACT_AntheraMe WHERE `ID` = ?", [req.body.data.ID]);
 
     if (data.length === 0) return res.status(404).json({error: 'No matching record found'});
 
